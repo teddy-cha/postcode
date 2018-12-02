@@ -5,7 +5,7 @@
             <script>
                 new daum.Postcode({
                     oncomplete: function(data) {
-                        location.href='native://setAddress?simpleAddress=' + data.sido + ' ' + data.sigungu + ' ' + data.bname + '&address=' + data.jibunAddress + '&buildingName=' + data.buildingName
+                        location.href='native://setAddress?zoneCode=' + data.sido + ' ' + data.sigungu + ' ' + data.bname + '&address=' + data.jibunAddress + '&buildingName=' + data.buildingName
                              
                     },
                     shorthand: false
