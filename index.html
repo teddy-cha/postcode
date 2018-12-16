@@ -5,8 +5,11 @@
             <script>
                 new daum.Postcode({
                     oncomplete: function(data) {
-                        location.href='native://setAddress?zoneCode=' + data.sido + ' ' + data.sigungu + ' ' + data.bname + '&address=' + data.autoJibunAddress + '&buildingName=' + data.buildingName
-                             
+                        if (data.jibunAddress == "") {
+                            location.href='native://setAddress?zoneCode=' + data.sido + ' ' + data.sigungu + ' ' + data.bname + '&address=' + data.autoJibunAddress + '&buildingName=' + data.buildingName
+                        } else {
+                            location.href='native://setAddress?zoneCode=' + data.sido + ' ' + data.sigungu + ' ' + data.bname + '&address=' + data.jibunAddress + '&buildingName=' + data.buildingName
+                        }
                     },
                     shorthand: false
                 }).open();
